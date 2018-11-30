@@ -1,6 +1,9 @@
 package com.evolve.proxsor;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -20,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         valueTextView = findViewById(R.id.value);
 
-        ProximitySensor.instance.getInstance().create(this);
+        ProximitySensor.instance.getInstance().create(this, Sensor.TYPE_PROXIMITY);
          sensorView = new ProximityEventView() {
             @Override
-            public void onSensorChanged(float value) {
+            public void onSensorChanged(@NonNull SensorEvent value) {
                 Log.v("Sensor overide"," "+value);
 
-                valueTextView.setText(String.valueOf(value));
+
             }
         };
 

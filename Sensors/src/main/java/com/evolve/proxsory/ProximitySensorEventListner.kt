@@ -11,11 +11,10 @@ class ProximitySensorEventListner(proximityEventView: ProximityEventView) : Sens
         this.proximityEventView = proximityEventView
     }
     override fun onSensorChanged(event: SensorEvent?) {
-        event?.values?.get(0)?.let {
+        event?.let {
             proximityEventView.onSensorChanged(it)
         }
     }
-
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
 
     }

@@ -1,6 +1,14 @@
 package com.evolve.proxsory
 
-interface ProximitySensorHelper{
-   public fun listenToEvents(proximityEventView: ProximityEventView)
-   public fun stopListeninToEvents(proximityEventView: ProximityEventView)
+import android.hardware.Sensor
+
+interface ProximitySensorHelper {
+    fun listenToEvents(proximityEventView: ProximityEventView)
+    fun stopListeninToEvents(proximityEventView: ProximityEventView)
+
+    fun getAllAvailableSensors(): List<Sensor>
+
+    fun checkSensaorAvailable(sensorType : Int) : Boolean
+
+
 }
