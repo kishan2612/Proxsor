@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
-        android:text="Proximity Value"
+        android:text="Sensor Value"
         android:layout_margin="16dp"/>
 
     <TextView

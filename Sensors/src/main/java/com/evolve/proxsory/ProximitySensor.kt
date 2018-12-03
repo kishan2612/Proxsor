@@ -20,8 +20,15 @@ import android.hardware.SensorManager
         val instance : ProximitySensor by lazy { ProximitySensor() }
 
     }
+     fun create(context: Context){
+         this.context = context
 
-    fun create(context: Context, sensorType: Int){
+         mSensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
+     }
+
+
+     fun create(context: Context, sensorType: Int){
         this.context = context
 
         mSensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
