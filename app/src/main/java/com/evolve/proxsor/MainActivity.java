@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         valueTextView = findViewById(R.id.value);
 
-        ProximitySensor.instance.getInstance().create(this);
+        ProximitySensor.init.getInstance().create(this);
 
-       List<Sensor> allsensors = ProximitySensor.instance.getInstance().getAllAvailableSensors();
+       List<Sensor> allsensors = ProximitySensor.init.getInstance().getAllAvailableSensors();
 
-        ProximitySensor.instance.getInstance().create(this, Sensor.TYPE_PROXIMITY);
+        ProximitySensor.init.getInstance().create(this, Sensor.TYPE_PROXIMITY);
          sensorView = new ProximityEventView() {
             @Override
             public void onSensorChanged(@NonNull SensorEvent value) {
@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        ProximitySensor.instance.getInstance().listenToEvents(sensorView);
+        ProximitySensor.init.getInstance().listenToEvents(sensorView);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        ProximitySensor.instance.getInstance().stopListeninToEvents(sensorView);
+        ProximitySensor.init.getInstance().stopListeninToEvents(sensorView);
 
 
     }

@@ -16,7 +16,7 @@ import android.hardware.SensorManager
      /*
      lazy will provide single instance of the class
       */
-     companion object instance{
+     companion object init{
         val instance : ProximitySensor by lazy { ProximitySensor() }
 
     }
